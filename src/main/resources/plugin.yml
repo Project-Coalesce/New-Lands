@@ -1,0 +1,6 @@
+name: NewLands
+version: 1.0
+main: com.coalesce.newlands.NewLandsPlugin
+load: STARTUP
+author: ProjectCoalesce
+depend: [CoalesceCore]
