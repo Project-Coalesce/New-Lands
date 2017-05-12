@@ -1,14 +1,13 @@
 package com.coalesce.newlands;
 
 import com.coalesce.newlands.chunk.NewLandsChunkGenerator;
-import com.coalesce.newlands.world.WorldModule;
 import com.coalesce.plugin.CoPlugin;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.World;
 import org.bukkit.generator.ChunkGenerator;
 
 public class NewLandsPlugin extends CoPlugin {
-
-	WorldModule worldModule;
 
 	private final static String TARGET_WORLD_NAME = "world";
 
@@ -21,7 +20,9 @@ public class NewLandsPlugin extends CoPlugin {
 	@Override
 	public ChunkGenerator getDefaultWorldGenerator(String worldName, String id){
 
-		return new NewLandsChunkGenerator();
+    	World world = Bukkit.getWorld(worldName);
+
+		return new NewLandsChunkGenerator(world, world.getSeed());
 
 	}
 
