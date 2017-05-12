@@ -1,6 +1,5 @@
 package com.coalesce.newlands.chunk;
 
-import net.minecraft.server.v1_11_R1.Chunk;
 import net.minecraft.server.v1_11_R1.ChunkGenerator;
 import org.bukkit.World;
 import org.bukkit.craftbukkit.v1_11_R1.CraftWorld;
@@ -16,13 +15,8 @@ public class NewLandsChunkGenerator extends NormalChunkGenerator {
 		super(((CraftWorld)world).getHandle(), seed);
 
 		chunkGenerator = getChunkGenerator();
-	}
 
-	@Override
-	public boolean a(Chunk chunk, int i, int i1){
-		System.out.println("DING");
-
-		return super.a(chunk, i, i1);
+		System.out.println("It works");
 	}
 
 	private ChunkGenerator getChunkGenerator(){
